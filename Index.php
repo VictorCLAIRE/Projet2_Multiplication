@@ -60,7 +60,7 @@
      <form method='POST' action='views/True_False.php'>
         <h2>Multiplication au hasard</h2>
         <div class="form-group">    
-            <label for="tretre"> La multiplication est :
+            <label for="consigne"> La multiplication est :
                 <?php
                     $ChiffreA = array(0,1,2,3,4,5,6,7,8,9,10);
                     $ChiffreB = array(0,1,2,3,4,5,6,7,8,9,10);
@@ -77,6 +77,60 @@
              
             <button type="submit" class="btn btn-success">Résultat</button>
             </form>
+        </div>
+    </div>
+    <div>
+        <div class="container" id="blockRevision">
+            <h2>Mode révision</h2>
+            <form action="views/revision.php" method='POST'>
+                <?php
+                    $Chiffre1 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre2 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre3 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre4 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre5 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre6 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre7 = array(0,1,2,3,4,5,6,7,8,9,10);
+                    $Chiffre8 = array(0,1,2,3,4,5,6,7,8,9,10);
+
+                    $x1 = array_rand($Chiffre1);
+                    $x2 = array_rand($Chiffre2);
+                    $x3 = array_rand($Chiffre3);
+                    $x4 = array_rand($Chiffre4);
+                    $x5 = array_rand($Chiffre5);
+                    $x6 = array_rand($Chiffre6);
+                    $x7 = array_rand($Chiffre7);
+                    $x8 = array_rand($Chiffre8);
+
+                    $reponse1 = $x1+$x2;
+                    $reponse2 = $x3-$x4;
+                    $reponse3 = $x5+$x6;
+                    $reponse4 = $x7-$x8;   
+                    ?>
+                <!--Question 1 -->
+                <p> Première question : <?= $x1 . "+". $x2 . "="; ?>  </p>      
+                <input type="hidden" name="Revision1" id="Revision1" value="<?= $reponse1 ?>"> 
+                <input type="number" name="UserReponse1" id="UserReponse1"> 
+
+                <!--Question 2 -->
+                <p> Deuxième question : <?= $x3 . "-". $x4 . "="; ?>  </p>      
+                <input type="hidden" name="Revision2" id="Revision2" value="<?= $reponse2 ?>"> 
+                <input type="number" name="UserReponse2" id="UserReponse2"> 
+
+                <!--Question 3 -->
+                <p> Troisième question : <?= $x5 . "+". $x6 . "="; ?>  </p>      
+                <input type="hidden" name="Revision3" id="Revision3" value="<?= $reponse3 ?>"> 
+                <input type="number" name="UserReponse3" id="UserReponse3">
+
+                <!--Question 4 -->
+                <p> Quatrième question : <?= $x7 . "-". $x8 . "="; ?>  </p>      
+                <input type="hidden" name="Revision4" id="Revision4" value="<?= $reponse4 ?>"> 
+                <input type="number" name="UserReponse4" id="UserReponse4">  
+                <br>
+                <button type="submit" class="btn btn-success">Résultats</button>  
+            </form>
+
+        
         </div>
     </div>
     <div>

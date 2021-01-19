@@ -20,7 +20,8 @@ if (isset($_POST['multiplicateur'])) {
         }
     }
 }
-?><div class="btnBack"> 
+?>
+    <div class="btnBack"> 
         <a href="../Index.php" class="btn btn-primary">Retour Accueil</a>
     </div>    
 
